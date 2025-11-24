@@ -245,11 +245,17 @@ async def docs_simple():
 
 if __name__ == "__main__":
     import uvicorn
-    
+    import argparse
+
+    parser = argparse.ArgumentParser(description="E-commerce Semantic Search API")
+    parser.add_argument("-p", "--port", type=int, default=8000, help="Puerto para el servidor")
+    parser.add_argument("--host", type=str, default="0.0.0.0", help="Host para el servidor")
+    args = parser.parse_args()
+
     uvicorn.run(
         "main:app",
-        host="0.0.0.0",
-        port=8000,
+        host=args.host,
+        port=args.port,
         reload=True,
         log_level=settings.log_level.lower()
     )
