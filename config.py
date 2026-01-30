@@ -10,11 +10,11 @@ class Settings(BaseSettings):
     """Configuración de la aplicación usando Pydantic Settings."""
     
     # Elasticsearch Configuration
-    elasticsearch_url: str = "http://localhost:9200"
+    elasticsearch_url: str = "http://localhost:29205"
     index_name: str = "productos"
     
     # External API
-    productos_api_url: str = "http://localhost:8000/api/v1/products"
+    productos_api_url: str = "http://localhost:29100/api/v1/products"
     
     # ML Model (renombrado para evitar conflicto)
     embedding_model_name: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
@@ -36,6 +36,7 @@ class Settings(BaseSettings):
     model_config = {
         "env_file": ".env",
         "case_sensitive": False,
+        "extra": "allow",
         "protected_namespaces": ("settings_",)
     }
 

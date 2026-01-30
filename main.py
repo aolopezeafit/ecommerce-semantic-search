@@ -101,9 +101,9 @@ async def api_info():
             "description": "Sistema de búsqueda semántica para productos de e-commerce"
         },
         "documentation": {
-            "swagger_ui": f"http://localhost:8000/docs",
-            "redoc": f"http://localhost:8000/redoc", 
-            "openapi_json": f"http://localhost:8000/openapi.json"
+            "swagger_ui": f"http://localhost:8001/docs",
+            "redoc": f"http://localhost:8001/redoc", 
+            "openapi_json": f"http://localhost:8001/openapi.json"
         },
         "endpoints": {
             "search": {
@@ -139,9 +139,9 @@ async def api_info():
             }
         },
         "examples": {
-            "semantic_search": "curl -X POST http://localhost:8000/api/v1/buscar -H 'Content-Type: application/json' -d '{\"query\": \"laptop para programar\", \"top_k\": 3}'",
-            "health_check": "curl http://localhost:8000/api/v1/health",
-            "categories": "curl http://localhost:8000/api/v1/categories"
+            "semantic_search": "curl -X POST http://localhost:8001/api/v1/buscar -H 'Content-Type: application/json' -d '{\"query\": \"laptop para programar\", \"top_k\": 3}'",
+            "health_check": "curl http://localhost:8001/api/v1/health",
+            "categories": "curl http://localhost:8001/api/v1/categories"
         }
     }
 
@@ -182,7 +182,7 @@ async def docs_simple():
             <h3>🔍 Búsqueda Semántica</h3>
             <p><span class="method">POST</span> <span class="url">/api/v1/buscar</span></p>
             <p>Encuentra productos por significado, no solo palabras exactas.</p>
-            <div class="example">curl -X POST http://localhost:8000/api/v1/buscar \\
+            <div class="example">curl -X POST http://localhost:8001/api/v1/buscar \\
   -H "Content-Type: application/json" \\
   -d '{"query": "smartphone con buena cámara", "top_k": 5}'</div>
         </div>
@@ -191,14 +191,14 @@ async def docs_simple():
             <h3>🏥 Health Check</h3>
             <p><span class="method">GET</span> <span class="url">/api/v1/health</span></p>
             <p>Estado de salud de todos los servicios del sistema.</p>
-            <div class="example">curl http://localhost:8000/api/v1/health</div>
+            <div class="example">curl http://localhost:8001/api/v1/health</div>
         </div>
 
         <div class="endpoint">
             <h3>🔄 Sincronización</h3>
             <p><span class="method">POST</span> <span class="url">/api/v1/sync</span></p>
             <p>Sincroniza productos desde la API externa al índice de Elasticsearch.</p>
-            <div class="example">curl -X POST http://localhost:8000/api/v1/sync \\
+            <div class="example">curl -X POST http://localhost:8001/api/v1/sync \\
   -H "Content-Type: application/json" \\
   -d '{}'</div>
         </div>
@@ -207,14 +207,14 @@ async def docs_simple():
             <h3>🏷️ Categorías</h3>
             <p><span class="method">GET</span> <span class="url">/api/v1/categories</span></p>
             <p>Lista todas las categorías de productos disponibles.</p>
-            <div class="example">curl http://localhost:8000/api/v1/categories</div>
+            <div class="example">curl http://localhost:8001/api/v1/categories</div>
         </div>
 
         <div class="endpoint">
             <h3>📊 Estadísticas</h3>
             <p><span class="method">GET</span> <span class="url">/api/v1/stats</span></p>
             <p>Estadísticas del índice y métricas de búsquedas.</p>
-            <div class="example">curl http://localhost:8000/api/v1/stats</div>
+            <div class="example">curl http://localhost:8001/api/v1/stats</div>
         </div>
 
         <h2>✨ Ejemplos de Búsqueda Semántica</h2>
